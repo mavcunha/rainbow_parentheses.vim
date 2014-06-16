@@ -14,7 +14,6 @@ let s:pairs = [
 	\ ['darkmagenta', 'DarkOrchid3'],
 	\ ['brown',       'firebrick3'],
 	\ ['gray',        'RoyalBlue3'],
-	\ ['black',       'SeaGreen3'],
 	\ ['darkmagenta', 'DarkOrchid3'],
 	\ ['Darkblue',    'firebrick3'],
 	\ ['darkgreen',   'RoyalBlue3'],
@@ -40,7 +39,7 @@ cal s:extend()
 func! rainbow_parentheses#activate()
 	let [id, s:active] = [1, 1]
 	for [ctermfg, guifg] in s:pairs
-		exe 'hi default level'.id.'c ctermfg='.ctermfg.' guifg='.guifg
+		exe 'hi default level'.id.'c cterm=bold ctermfg='.ctermfg.' guifg='.guifg
 		let id += 1
 	endfor
 endfunc
